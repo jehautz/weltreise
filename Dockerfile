@@ -2,7 +2,7 @@ FROM node:10-alpine AS node-builder
 WORKDIR /usr/src/app
 COPY package.json ./
 RUN npm install --global gulp-cli
-RUN npm install
+RUN npm install --save --legacy-peer-deps
 COPY . .
 RUN gulp
 
