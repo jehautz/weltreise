@@ -1,0 +1,15 @@
+build:
+  stage: build
+  script:
+    - make build
+
+deploy:
+  stage: deploy
+  script:
+    - make stop
+    - make start
+  environment:
+    name: production/$CI_COMMIT_REF_NAME
+    url: https://benjamin-hackl.at/dev/weltreise/
+  only:
+    - master

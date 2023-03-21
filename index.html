@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Benjamin Hackl">
+    <title>Wer plant die beste Weltreise?</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+
+    <!-- build:css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="assets/css/weltreise.css">
+
+  </head>
+
+  <body>
+    <main role="main">
+        <div id="gamemode-container" class="container mb-3">
+          <h1 class="display-4">Wer plant die beste Weltreise?</h1>
+          <div id="gamemode">
+              <div class="card">
+                <div class="card-header"><h4>Spielmodus wählen</h4></div>
+              </div>
+              <div class="card-group">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Geld sparen</h5>
+                    <p class="card-text">
+                      Planen Sie die <em>billigste</em> Rundreise! Der Einfachheit halber
+                      gilt: längere Flüge sind immer teurer.
+                    </p>
+                    <button id="mode-money" class="btn btn-primary">Spiel starten</button>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Reihenfolge beachten</h5>
+                    <p class="card-text">
+                      Planen Sie eine Rundereise, die <em>möglichst viele</em>
+                      der vorgegebenen Präferenzen berücksichtigt. Jede erfüllte
+                      Bedingung bringt eine Ersparnis von 400 €.
+                    </p>
+                    <button id="mode-preference" class="btn btn-primary">Spiel starten</button>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Gemischt</h5>
+                    <p class="card-text">
+                      Planen Sie eine möglichst <em>billige</em> Rundreise,
+                      die aber <strong>zugleich</strong> möglichst <em>viele Präferenzen</em>
+                      erfüllt. Der Bonus von den Bedingungen wird mit den Reisekosten
+                      gegengerechnet.
+                     </p>
+                     <button id="mode-mixed" class="btn btn-primary">Spiel starten</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div id="game-container" class="container-fluid">
+          <div class="card">
+            <div id="explanation-container" class="card-body">
+              <div data-mode="0">
+                <h6>Modus: Billigste Rundreise</h6>
+                Planen Sie die <em>billigste</em> Rundreise! Als Faustregel gilt: längere
+                Flüge sind auch entsprechend teurer. Unsere Preis-Tabelle für die
+                Reisen zwischen zwei Städten sieht so aus:
+                <table class="distance-table table-sm table-responsive text-center"></table>
+              </div>
+              <div data-mode="1">
+                <h6>Modus: Billigste Rundreise</h6>
+                Planen Sie eine Rundreise, die möglichst gut auf die vorgegebenen
+                Reihenfolgen-Wünsche eingeht! Dabei müssen die Städte nicht direkt
+                hintereinander besucht werden: es können auch "Zwischenstationen"
+                zwischen den Städten aus den Präferenzen liegen. Jede erfüllte
+                Präferenz ist 4000€ wert. Die Liste mit den Wünschen schaut
+                so aus:
+                <ul class="preference-list list-3"></ul>
+              </div>
+              <div data-mode="2">
+                <h6>Modus: Gemischt</h6>
+                Planen Sie die <em>beste</em> Rundreise, die sowohl möglichst billig
+                ist als auch möglichst viele der Reihenfolgen-Präferenzen erfüllt.
+                <div class="row">
+                    <div class="col-12 col-lg-9">
+                        <table class="distance-table table-sm table-responsive text-center"></table>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <ul class="preference-list"></ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="points-container">
+              <div id="points-text">
+                  <strong>Aktuelle Kosten / Ersparnis:</strong> <span class="points">0 €</span>
+              </div>
+              <div id="game-controls">
+                <button class="restart btn btn-primary">Neu starten</button>
+                <button id="revert" class="btn btn-secondary">Schritt zurück</button>
+              </div>
+          </div>
+        <div id="world"></div>
+      </div>
+    </main>
+
+
+    <div id="finish-modal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Weltreise geplant!</h5>
+          </div>
+          <div class="modal-body">
+            <p>
+              Sie haben Ihre Weltreise mit der Reihenfolge
+              <span class="text-muted" id="travel-order"></span>
+              mit Kosten/Ersparnis von <span class="points"></span> geplant.
+            </p>
+            <p>
+              Das ist die <span id="rank"></span> von 40320 möglichen Lösungen!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="restart btn btn-primary">Nochmal spielen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- build:js -->
+    <script src="assets/js/main.js"></script>
+    <!-- endbuild -->
+
+    <script src="assets/js/weltreise.js"></script>
+
+  </body>
+
+</html>

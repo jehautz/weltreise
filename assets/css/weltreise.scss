@@ -1,0 +1,56 @@
+
+// variables
+$white:   #fff !default;
+$gray-200: #e9ecef !default;
+
+// styesheet
+body {background:$white;}
+.navbar {border-bottom:1px solid $gray-200;}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1500px;
+    .card {
+        max-width: 100%;
+    }
+}
+
+#gamemode-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+#gamemode {
+    max-width: 800px;
+}
+
+#points-container {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    #game-controls {
+        position: absolute;
+        right: 1rem;
+        top: 0;
+    }
+}
+
+.list-3 {
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+}
+
+@media screen and (max-width: 800px) {
+    #points-text {
+        margin-top: 2.5rem;
+    }
+}
