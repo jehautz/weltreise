@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
   },
-  "author": "Benjamin Hackl",
+  "author": "Jessica Hautz",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.aau.at/behackl/lndf-weltreise"
+    "url": "https://github.com/jehautz/weltreise"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
